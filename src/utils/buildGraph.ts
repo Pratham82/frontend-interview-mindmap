@@ -4,6 +4,7 @@ type Topic = {
   id: string
   label: string
   children?: Topic[]
+  type: string
 }
 
 export function buildGraph(data: Topic[]): { nodes: Node[]; edges: Edge[] } {
@@ -14,9 +15,9 @@ export function buildGraph(data: Topic[]): { nodes: Node[]; edges: Edge[] } {
     const id = topic.id
     nodes.push({
       id,
-      type: "custom", // ✅ Add this line
+      type: topic.type,
       data: { label: topic.label },
-      position: { x: 0, y: 0 }, // will be updated by layout
+      position: { x: 0, y: 0 },
     })
 
     if (parentId) {

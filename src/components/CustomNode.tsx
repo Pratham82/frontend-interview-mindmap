@@ -1,7 +1,10 @@
-// components/CustomNode.tsx
-import { Handle, Position } from "reactflow"
+import { Handle, Position, NodeProps } from "reactflow"
 
-const CustomNode = ({ data }: any) => {
+type CustomNodeData = {
+  label: string
+}
+
+const CustomNode = ({ data }: NodeProps<CustomNodeData>) => {
   return (
     <div className="relative bg-white border border-blue-500 rounded-2xl px-5 py-4 min-w-[140px] shadow-md hover:shadow-lg transition-shadow duration-200 group">
       <div className="text-blue-800 font-semibold text-sm text-center">{data.label}</div>

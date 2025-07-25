@@ -433,7 +433,7 @@ const topics = [
   {
     id: "1",
     label: "Frontend Interview",
-    type: "custom",
+    type: "titleNode",
     children: [
       {
         id: "2",

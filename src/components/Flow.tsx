@@ -15,15 +15,24 @@ import { useReactFlow } from "reactflow"
 import { useEffect, useState } from "react"
 import CustomNode from "./CustomNode"
 import NodeDetailModal from "./NodeDetailsModal"
+import { Node } from "reactflow"
+import TitleNode from "./TitleNode"
 
 const nodeTypes = {
   custom: CustomNode,
+  titleNode: TitleNode,
 }
+
+type CustomNodeData = {
+  label: string
+}
+type TitleNodeData = { title: string }
+
+type NodeData = CustomNodeData | TitleNodeData
 
 export default function Flow() {
   const { nodes: rawNodes, edges: rawEdges } = buildGraph(topics)
   const layouted = getLayoutedElements(rawNodes, rawEdges)
-  console.log("🚀 ~ Flow ~ layouted:", layouted)
   const { fitView } = useReactFlow()
 
   useEffect(() => {
@@ -32,7 +41,7 @@ export default function Flow() {
 
   const [nodes, setNodes, onNodesChange] = useNodesState(layouted.nodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(layouted.edges)
-  const [selectedNode, setSelectedNode] = useState<Node | any>(null)
+  const [selectedNode, setSelectedNode] = useState<Node<NodeData> | null>(null)
 
   const onNodeClick: NodeMouseHandler = (_event, node) => {
     setSelectedNode(node)
