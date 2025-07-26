@@ -116,6 +116,10 @@ This project is a visual mindmap to help frontend developers prepare for technic
 
 ---
 
+## Screenshots
+
+![image](public/Screenshot%202025-07-26%20at%204.05.04 PM.png)
+
 ## 🧰 Getting Started
 
 ### 1. Clone the repo
