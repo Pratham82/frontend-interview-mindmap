@@ -1,0 +1,17 @@
+# Understanding Closures in JavaScript
+
+Closures are functions that retain access to their lexical scope, even when executed outside of that scope.
+
+## Example
+
+```js
+function outer() {
+  const message = 'Hello from outer!'
+  return function inner() {
+    console.log(message)
+  }
+}
+
+const greet = outer()
+greet() // Hello from outer!
+```
