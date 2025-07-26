@@ -1,18 +1,21 @@
 // lib/layout.ts
-import dagre from "dagre"
+import dagre from 'dagre'
 
-import { Node, Edge } from "reactflow"
+import { Node, Edge } from 'reactflow'
 
 const nodeWidth = 172
 const nodeHeight = 36
 
-export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "TB") => {
+export const getLayoutedElements = (
+  nodes: Node[],
+  edges: Edge[],
+  direction = 'TB'
+) => {
   const dagreGraph = new dagre.graphlib.Graph()
   dagreGraph.setDefaultEdgeLabel(() => ({}))
 
-  const isHorizontal = direction === "LR"
-  // dagreGraph.setGraph({ rankdir: direction })
-  dagreGraph.setGraph({ rankdir: "TB" })
+  // const isHorizontal = direction === 'LR'
+  dagreGraph.setGraph({ rankdir: direction })
 
   nodes.forEach(node => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight })

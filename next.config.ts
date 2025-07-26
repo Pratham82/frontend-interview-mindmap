@@ -1,6 +1,6 @@
 // next.config.ts
-import type { NextConfig } from "next"
-import withMDX from "@next/mdx"
+import type { NextConfig } from 'next'
+import withMDX from '@next/mdx'
 
 const withMDXConfig = withMDX({
   extension: /\.mdx?$/,
@@ -8,7 +8,7 @@ const withMDXConfig = withMDX({
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"], // 👈 required
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'], // 👈 required
 }
 
 export default withMDXConfig(nextConfig)
