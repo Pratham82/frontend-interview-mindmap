@@ -23,14 +23,14 @@ export function buildGraph(data: Topic[]): { nodes: Node[]; edges: Edge[] } {
       id,
       type: topic.type,
       data: { label: topic.label, slug: topic.slug },
-      position: { x: 0, y: 0 },
+      position: { x: 0, y: 0 }
     })
 
     if (parentId) {
       edges.push({
         id: `e${parentId}-${id}`,
         source: parentId,
-        target: id,
+        target: id
       })
     }
 

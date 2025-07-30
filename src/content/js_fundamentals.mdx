@@ -1,17 +1,52 @@
-# Understanding Closures in JavaScript
+#
 
-Closures are functions that retain access to their lexical scope, even when executed outside of that scope.
+<details>
+  
+  <summary>1. How JS works and execution context?</summary>
 
-## Example
+  <div style={{ paddingLeft: '1.25rem' }}>
 
-```js
-function outer() {
-  const message = 'Hello from outer!'
-  return function inner() {
-    console.log(message)
-  }
-}
+At its core, **everything in JavaScript happens inside something called an _"execution context."_**  
+You can think of this as a **big box or a container** where all your JavaScript code runs and is processed. This execution context is the complete environment for code execution.
 
-const greet = outer()
-greet() // Hello from outer!
-```
+This execution context has two main components:
+
+### • Memory Component (also known as Variable Environment)
+
+- This is one of the two crucial parts of the big box, dedicated to **storing data**.
+- It's the specific place where **all your variables and functions are kept**.
+- They are stored here as **"key-value pairs."** For example, a variable named `a` would have the value `10` associated with it.
+- This component is also formally known as the **Variable Environment**, emphasizing that it's an environment for storing variables and functions.
+
+### • Code Component (also known as Thread of Execution)
+
+- This is the second vital part of the big box.
+- This is where the **actual JavaScript code is executed**.
+- The code is processed here **one line at a time**.
+- This component is also known as the **Thread of Execution**, which describes how code proceeds: like a single, continuous thread working through instructions sequentially.
+  topmate.io/join/prathamesh_mali_82
+
+---
+
+An important **core fundamental** concept is that **JavaScript is a synchronous single-threaded language.**  
+This characteristic dictates how JavaScript handles tasks and processes your code:
+
+### 🔹 Single-threaded
+
+JavaScript can only execute **one command at a time**.  
+Imagine it like a single lane on a highway; only one task can pass through at any given moment. It does not perform multiple operations concurrently in its core execution.
+
+### 🔹 Synchronous
+
+JavaScript executes commands in a **specific and predetermined order**.  
+It maintains a strict sequence: JavaScript **will not move on to the next line of code until the current line has completely finished executing**. This ensures that each operation is fully completed before the next begins, leading to a predictable, step-by-step flow of execution.
+
+---
+
+Therefore, the combination of _"synchronous single-threaded"_ means that JavaScript processes your code in a rigid, sequential manner—handling one instruction fully before proceeding to the next.  
+While concepts like Ajax might suggest asynchronous behavior, the **fundamental execution model** is still synchronous and single-threaded.
+
+> 💡 **This understanding of the execution context is essential to mastering how JavaScript functions under the hood.**
+
+  </div>
+</details>

@@ -19,7 +19,7 @@ export default function CodeBlock({ className, children }: CodeBlockProps) {
       customStyle={{
         borderRadius: '0.5rem',
         padding: '1rem',
-        fontSize: '0.875rem',
+        fontSize: '0.875rem'
       }}
     >
       {children.trim()}

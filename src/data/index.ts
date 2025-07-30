@@ -446,55 +446,55 @@ const topics = [
             id: '2.1',
             label: 'Conceptual Questions',
             type: 'custom',
-            slug: 'conceptual_questions',
+            slug: 'conceptual_questions'
           },
           {
             id: '2.2',
             label: 'Polyfills',
             type: 'custom',
-            slug: 'polyfills',
+            slug: 'polyfills'
           },
           {
             id: '2.3',
             label: 'Output Based Questions',
             type: 'custom',
-            slug: 'output_based_questions',
-          },
-        ],
+            slug: 'output_based_questions'
+          }
+        ]
       },
       {
         id: '3',
         label: 'React',
         type: 'custom',
-        slug: 'react',
+        slug: 'react'
       },
       {
         id: '4',
         label: 'Machine Coding Questions',
         type: 'custom',
-        slug: 'machine_coding',
+        slug: 'machine_coding'
       },
 
       {
         id: '6',
         label: 'Web Performance',
         type: 'custom',
-        slug: 'web_performance',
+        slug: 'web_performance'
       },
       {
         id: '7',
         label: 'Tooling',
         type: 'custom',
-        slug: 'tooling',
+        slug: 'tooling'
       },
       {
         id: '8',
         label: 'CSS',
         type: 'custom',
-        slug: 'css',
-      },
-    ],
-  },
+        slug: 'css'
+      }
+    ]
+  }
 ]
 
 export { topics }

@@ -5,7 +5,7 @@ import ReactFlow, {
   MiniMap,
   NodeMouseHandler,
   useEdgesState,
-  useNodesState,
+  useNodesState
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 import { getLayoutedElements } from '@/lib/layout'
@@ -20,7 +20,7 @@ import TitleNode from './TitleNode'
 
 const nodeTypes = {
   custom: CustomNode,
-  titleNode: TitleNode,
+  titleNode: TitleNode
 }
 
 type CustomNodeData = {
