@@ -1,14 +1,18 @@
-// next.config.ts
-import type { NextConfig } from 'next'
+// next.config.js
 import withMDX from '@next/mdx'
 
 const withMDXConfig = withMDX({
   extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: []
+  }
 })
 
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'], // 👈 required
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx']
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx']
 }
 
 export default withMDXConfig(nextConfig)
